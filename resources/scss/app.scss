@@ -9,6 +9,129 @@ $fa-font-path: "../webfonts" !default;
 
 @import '~bootstrap/scss/bootstrap';
 
-h1 {
-    color: $text-color;
+header{
+    img{
+        width: 6em;
+    }
 }
+header {
+    padding: 20px;
+    justify-content: space-between;
+    height: 150px;
+    ul{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        li{
+            padding: 8px 15px;
+            a{
+                text-decoration: none;
+                color: black;
+                border-bottom: 5px solid transparent;
+            &:hover {
+                color: $primary;
+                border-bottom: 3px solid $primary;
+                }
+            }
+            }
+        }
+    }
+    #jumbotron {
+        background-image: url('../../../images/jumbotron.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 450px;
+        position: relative;
+
+        
+    button {
+        background-color: $primary;
+        color: $bg-white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 0;
+        position: absolute;
+        bottom: -20px;
+        border: 3px solid $primary;
+        font-weight: bolder;
+        
+
+        &:hover {
+            background-color: $bg-white;
+            color: $primary;
+            border: 3px solid $primary;
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+        }
+    }
+
+main {
+    background-color: black;
+    .container{
+        color: $bg-white;
+    }
+}
+
+.mycard{
+    border: none;
+    cursor: pointer;
+    position: relative;
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.787);
+    }
+    img{
+        
+        height: 15em;
+        object-fit: fill;
+        
+    };
+    h5{
+        color: $bg-white;
+        text-transform: uppercase;
+    }
+} 
+.button-main{
+    background-color: $primary;
+    color: $bg-white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 3px solid $primary;
+    font-weight: bolder;
+    &:hover {
+        background-color: $bg-white;
+        color: $primary;
+        border: 3px solid $primary;
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    }
+
+#footer-top{
+    background-color: #0282F9;
+    
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+            li{
+                padding: 20px 15px;
+                img{
+                    width: 4em;
+                    margin-right: 10px;
+                };
+                p{
+                    display: inline;
+                    text-transform: uppercase;
+                    color: white;
+                }
+            }
+    }
+}
+    

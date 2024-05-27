@@ -22,7 +22,10 @@
         @yield('content')
     </main>
 
-@include('partials.footer')
+    @include('partials.footer.footer_top')
+    @include('partials.footer.footer_middle')
+    @include('partials.footer.footer_bottom')
+
 
 </body>
 
