@@ -4,3 +4,14 @@ import * as bootstrap from 'bootstrap';
 import.meta.glob([
     '../img/**'
 ]);
+
+const form = document.getElementById('searchform');
+if(form){
+    const select = document.getElementById('search');
+    select.addEventListener('change', ()=>{
+        if(select.value !==''){
+            form.submit();
+        }
+})
+
+}
