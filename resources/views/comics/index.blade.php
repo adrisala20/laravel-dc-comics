@@ -5,7 +5,6 @@
     @include ('partials.jumbotron')
     <div class="container p-4">
     <div class="col-2">
-        @crf
         <form action="{{route('comics.index')}}" method="GET" class="d-flex" id="searchform">
             <select name="search" id="search" class="form-control">
                 <option value="">All</option>

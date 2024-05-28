@@ -9,7 +9,7 @@ const form = document.getElementById('searchform');
 if(form){
     const select = document.getElementById('search');
     select.addEventListener('change', ()=>{
-        if(select.value !==''){
+        if(select.value !=='all'){
             form.submit();
         }
 })
