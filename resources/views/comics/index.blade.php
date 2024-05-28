@@ -3,6 +3,11 @@
 @section('content')
 <section>
     @include ('partials.jumbotron')
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message')}}
+        </div>
+    @endif
     <div class="container p-4">
     <div class="col-2">
         <form action="{{route('comics.index')}}" method="GET" class="d-flex" id="searchform">

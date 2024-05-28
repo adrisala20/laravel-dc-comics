@@ -37,14 +37,13 @@ class ComicController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         //salvataggio e reindirezione dell'utente
         $form_data = $request->all();
         $new_comics = Comic::create($form_data);
-        return redirect()->route("comics.show", $new_comics->id);
+        return redirect()->route("comics.index")->with('message',"New Comic created");
     }
 
     /**
@@ -91,6 +90,6 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return redirect()->route('comics.index', $comic->id);
+        return redirect()->route('comics.index', $comic->id)->with('message',"Comic id: {$comic->id} Deleted");
     }
 }
