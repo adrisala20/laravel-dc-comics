@@ -4,6 +4,17 @@
 <section>
     @include ('partials.jumbotron')
     <div class="container p-4">
+    <div class="col-2">
+        @crf
+        <form action="{{route('comics.index')}}" method="GET" class="d-flex">
+            <select name="search" id="search" class="form-control">
+                <option value="">All</option>
+                <option value="comic book"> Comic Book</option>
+                <option value="graphic novel"> Graphic Novel</option>
+            </select>
+            <button type="submit" class="btn btn-danger ms-2"> cerca</button>
+        </form>
+    </div>
         <div class="row">
         @foreach ($comics as $comic )
 
