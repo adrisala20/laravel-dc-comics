@@ -17,14 +17,18 @@
             Series: {{$comic->series}}
         </h4>
         <h4>
-            Price: &euro; {{$comic->price}}
+            Price: &dollar; {{$comic->price}}
         </h4>
     </div>
-    <!-- <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
-        @csrf
-        @method('DELETE')
-        <input type="submit" value="Rimuovi" class="btn btn-danger">
-    </form> -->
+    <div>
+        <a href="{{ route('comics.edit', $comic->id)}}" class="btn btn-primary" ms-3>Modifica</a>
+        <form action="{{route('comics.destroy', $comic->id)}}" method="POST" class="d-inline">
+             @csrf
+             <!-- aggiungo il tipo delete -->
+              @method('DELETE')
+            <input type="submit" value="Rimuovi" class="btn btn-danger ">
+        </form>
+    </div>
     <h3 class="text-uppercase text-center pt-4">
         <a href="{{route('comics.index')}}" class="btn btn-dark d-flex col-2">Torna indietro</a>
     </h3>
