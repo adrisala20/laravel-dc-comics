@@ -3,27 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comic;
 
 class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * 
      */
     public function index()
     {
-        //
+        $comics= Comic::all();
+        return view("comics.index",compact("comics"));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function create()
     {
-        //
+        return view("comics.create");
     }
 
     /**
@@ -34,18 +36,20 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //salvataggio e reindirezione dell'utente
+        $form_data = $request->all();
+        $new_comics = Comic::create($form_data);
+        return redirect()->route("comics.show", $new_comics->id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  object Comic  $id
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
+       return view("comics.show",compact("comic"));
     }
 
     /**

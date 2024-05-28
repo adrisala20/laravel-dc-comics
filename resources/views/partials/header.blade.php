@@ -1,7 +1,10 @@
 <header class="bg-white">
     <div  class="container d-flex">
         <div id="logo">
-            <img src="../../../images/dc-logo.png" alt="DC logo">
+            <a class="nav-link {{ Route::currentRouteName() == 'characters' ? 'active' : '' }}"
+                        href="{{route('home')}}">
+                <img src="../../../images/dc-logo.png" alt="DC logo">
+            </a>
         </div>
         <div id="main-menu">
         <nav class="navbar-nav container navbar-light">
@@ -55,7 +58,7 @@
                     </a>
                 </li><li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'comics.create' ? 'active' : '' }}"
-                        href="{{route('home')}}">
+                        href="{{route('comics.create')}}">
                         inserisci un comics
                     </a>
                 </li>
