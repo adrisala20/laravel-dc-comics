@@ -20,6 +20,7 @@ Route::get('/', function () {
     $links_middle = config('footer_links_middle');
     return view('home', compact('comics','links_top','links_middle'));
 })->name('home');
+
 Route::resource('comics', ComicController::class);
 
 

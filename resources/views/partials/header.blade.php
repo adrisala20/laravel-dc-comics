@@ -8,55 +8,55 @@
             <ul class="list-unstyled d-flex justify-content-center gap-2 text-uppercase">
                 <li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'characters' ? 'active' : '' }}"
-                        href="{{route('characters')}}">
+                        href="{{route('home')}}">
                         Characters
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName() == 'comics' ? 'active' : '' }}"
-                        href="{{route('comics')}}">
+                    <a class="nav-link {{ Route::currentRouteName() == 'comics.index' ? 'active' : '' }}"
+                        href="{{route('comics.index')}}">
                         Comics
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'movies' ? 'active' : '' }}"
-                        href="{{route('movies')}}">
+                        href="{{route('home')}}">
                         Movies
                     </a>
                 </li><li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'tv' ? 'active' : '' }}"
-                        href="{{route('tv')}}">
+                        href="{{route('home')}}">
                         tv
                     </a>
                 </li><li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'games' ? 'active' : '' }}"
-                        href="{{route('games')}}">
+                        href="{{route('home')}}">
                         Games
                     </a>
                 </li><li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'collectibles' ? 'active' : '' }}"
-                        href="{{route('collectibles')}}">
+                        href="{{route('home')}}">
                         collectibles
                     </a>
                 </li><li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'videos' ? 'active' : '' }}"
-                        href="{{route('videos')}}">
+                        href="{{route('home')}}">
                         Videos
                     </a>
                 </li><li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'fans' ? 'active' : '' }}"
-                        href="{{route('fans')}}">
+                        href="{{route('home')}}">
                         Fans
                     </a>
                 </li><li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'new' ? 'active' : '' }}"
-                        href="{{route('new')}}">
+                        href="{{route('home')}}">
                         New
                     </a>
                 </li><li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName() == 'shops' ? 'active' : '' }}"
-                        href="{{route('shops')}}">
-                        Shops
+                    <a class="nav-link {{ Route::currentRouteName() == 'comics.create' ? 'active' : '' }}"
+                        href="{{route('home')}}">
+                        inserisci un comics
                     </a>
                 </li>
             </ul>
