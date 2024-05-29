@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use App\Http\Requests\UpdateComicRequest;
+use App\Http\Requests\StoreComicRequest;
 
 class ComicController extends Controller
 {
@@ -38,22 +40,14 @@ class ComicController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
         //validazione
-        $request->validate([
-            'title'=>'required|max:255!min:3',
-            'description'=> 'nullable',
-            'thumb'=> 'nullable|max:255',
-            'price'=> 'required|max:4',
-            'series'=> 'required|max:255',
-            'sale_date'=> 'required',
-            'type'=> 'required|max:50',
-        ])
+        $form_data = $request->validated();
 
         //salvataggio e reindirezione dell'utente
-        $form_data = $request->all();
-        $new_comics = Comic::create($form_data);
+        $new_comic = Comic::create($form_data);
+
         return redirect()->route("comics.index")->with('message',"New Comic created");
     }
 
@@ -71,7 +65,7 @@ class ComicController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * 
      */
     public function edit(Comic $comic)
     {
@@ -85,9 +79,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
+
         $comic->update($form_data);
         return redirect()->route('comics.show', $comic->id);
     }
