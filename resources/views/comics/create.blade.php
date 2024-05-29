@@ -2,13 +2,26 @@
 @section('title', 'crea comic')
 @section('content')
 <section class="container py-4">
+    <!-- <div class="container">
+        @if ($erroes->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endfor
+            </ul>
+        </div>
+        @endif
+    </div> -->
     <form action="{{route('comics.store')}}" method="POST">
     <!-- token -->
     @csrf 
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
-            <input type="text" class="form-control" id="title" aria-describedby="titlelHelp" name="title">
-            <div id="titleHelp" class="form-text">Inserisci un titolo</div>
+            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" aria-describedby="titlelHelp" name="{{old('title')}}">
+            @error('title')
+            <div class="alert alert-danger">{{ $message}} </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
@@ -17,7 +30,7 @@
         <div class="mb-3">
             <label for="thumb" class="form-label">Immagine</label>
             <input type="text" class="form-control" id="thumb" aria-describedby="thumbHelp" name="thumb">
-            <div id="thumbHelp" class="form-text">Inserisci una immagine</div>
+            <div id="thumbHelp" class="form-text">Inserisci un'immagine</div>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
@@ -47,6 +60,7 @@
         <button type="submit" class="btn btn-danger"> Annulla</button>
 
     </form>
+    php artisan make:request
     
 
     

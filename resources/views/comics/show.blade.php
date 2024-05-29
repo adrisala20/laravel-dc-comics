@@ -26,7 +26,7 @@
              @csrf
              <!-- aggiungo il tipo delete -->
               @method('DELETE')
-            <input type="submit" value="Rimuovi" class="btn btn-danger ">
+            <input type="submit" id="comicDelete" value="Rimuovi" class="btn btn-danger ">
         </form>
     </div>
     <h3 class="text-uppercase text-center pt-4">
